@@ -515,6 +515,62 @@ section {
   font-size: 0.9rem;
 }
 
+.recap {
+  padding: 78px 0 60px;
+  background: linear-gradient(180deg, #f0f6ff 0%, #ffffff 100%);
+}
+
+.recap .section-head h2 {
+  font-size: clamp(1.8rem, 4.5vw, 2.8rem);
+  color: var(--navy);
+  line-height: 1.3;
+}
+
+.recap .section-head p {
+  font-size: 1.1rem;
+  color: var(--ink);
+  max-width: 680px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 2;
+}
+
+.recap .section-head p strong {
+  color: var(--accent);
+}
+
+.recap-message {
+  margin-top: 32px;
+  display: flex;
+  justify-content: center;
+}
+
+.recap-card {
+  max-width: 720px;
+  padding: 32px 36px;
+  border-radius: 20px;
+  background: linear-gradient(135deg, #16314e 0%, #244f81 48%, #3879c1 100%);
+  color: var(--white);
+  box-shadow: 0 20px 50px rgba(14, 37, 77, 0.22);
+  text-align: center;
+}
+
+.recap-lead {
+  font-size: 1.05rem;
+  line-height: 2;
+  color: rgba(255,255,255,0.92);
+}
+
+.recap-conclusion {
+  margin-top: 20px;
+  font-size: 1.3rem;
+  font-weight: 900;
+  letter-spacing: 0.04em;
+  color: var(--white);
+  padding-top: 18px;
+  border-top: 1px solid rgba(255,255,255,0.2);
+}
+
 @media (max-width: 900px) {
   .hero-grid,
   .stats,
@@ -533,6 +589,14 @@ section {
   .timeline-row {
     grid-template-columns: 1fr;
     gap: 8px;
+  }
+
+  .recap-card {
+    padding: 24px 20px;
+  }
+
+  .recap-conclusion {
+    font-size: 1.1rem;
   }
 }
 </style>
@@ -589,6 +653,22 @@ section {
       </div>
     </div>
   </header>
+
+  <section class="recap">
+    <div class="container">
+      <div class="section-head">
+        <div class="section-kicker">第1回で辿り着いた結論</div>
+        <h2>AIは、東大卒の超優秀な新入社員。</h2>
+        <p>知識は膨大、処理は一瞬。でも<strong>御社のことは何も知らない</strong>。<br>会社で活躍させられるかどうかは、あなたの"社員教育力"次第です。</p>
+      </div>
+      <div class="recap-message">
+        <div class="recap-card">
+          <p class="recap-lead">教育に必要なのは、相手を思いやる心と、正しく伝える力。<br>それは、倫理法人会が毎朝磨いている力そのものです。</p>
+          <p class="recap-conclusion">だからこのセミナーは、倫理法人会でやる意味がある。</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <section>
     <div class="container">
@@ -668,7 +748,7 @@ section {
         <h2>講師紹介</h2>
       </div>
       <div class="speaker-card">
-        <img src="プロフィール画像.jpg" alt="奥田 倫明" class="speaker-photo" onerror="this.style.display='none'">
+        <img src="../第1回/ai-seminar-lp/プロフィール画像.jpg" alt="奥田 倫明" class="speaker-photo" onerror="this.style.display='none'">
         <p class="speaker-name">奥田 倫明</p>
         <p class="speaker-title">
           中小企業 IT導入診断士<br>
