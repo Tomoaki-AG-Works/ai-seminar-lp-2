@@ -1,0 +1,552 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>夫婦は真逆のほうがいい — 井上信平氏 ナイトセミナー</title>
+  <style>
+    :root {
+      --ink: #18212b;
+      --muted: #66707d;
+      --paper: #fbfaf6;
+      --panel: #ffffff;
+      --line: #ded8ca;
+      --navy: #07395c;
+      --teal: #0f766e;
+      --gold: #b98422;
+      --rose: #9f4d47;
+      --shadow: 0 18px 50px rgba(16, 24, 40, 0.12);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      background:
+        linear-gradient(180deg, rgba(7, 57, 92, 0.08), rgba(251, 250, 246, 0) 360px),
+        var(--paper);
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Yu Gothic", "YuGothic", "Noto Sans JP", sans-serif;
+      line-height: 1.78;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    .page {
+      width: min(1120px, calc(100% - 32px));
+      margin: 0 auto;
+      padding: 32px 0 64px;
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 1.08fr) minmax(280px, 0.72fr);
+      gap: 28px;
+      align-items: stretch;
+      min-height: 620px;
+    }
+
+    .hero-copy {
+      padding: 34px 0 18px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .kicker {
+      display: inline-flex;
+      width: fit-content;
+      border: 1px solid rgba(185, 132, 34, 0.42);
+      color: var(--gold);
+      background: rgba(255, 255, 255, 0.72);
+      padding: 5px 10px;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0;
+    }
+
+    h1 {
+      margin: 18px 0 18px;
+      font-size: clamp(40px, 7vw, 76px);
+      line-height: 1.08;
+      letter-spacing: 0;
+      color: var(--navy);
+    }
+
+    .lead {
+      max-width: 720px;
+      margin: 0 0 28px;
+      font-size: clamp(17px, 2vw, 21px);
+      color: #263544;
+    }
+
+    .meta-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+      max-width: 680px;
+    }
+
+    .meta {
+      border-top: 1px solid var(--line);
+      padding-top: 10px;
+    }
+
+    .meta span {
+      display: block;
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    .meta strong {
+      display: block;
+      margin-top: 2px;
+      font-size: 15px;
+    }
+
+    .flyer-frame {
+      align-self: end;
+      background: var(--panel);
+      box-shadow: var(--shadow);
+      border: 1px solid rgba(7, 57, 92, 0.14);
+      padding: 10px;
+      border-radius: 8px;
+    }
+
+    .flyer-frame img {
+      display: block;
+      width: 100%;
+      border-radius: 4px;
+    }
+
+    .section {
+      margin-top: 44px;
+    }
+
+    .section-head {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 18px;
+      border-bottom: 1px solid var(--line);
+      padding-bottom: 10px;
+      margin-bottom: 18px;
+    }
+
+    h2 {
+      margin: 0;
+      font-size: clamp(24px, 3vw, 34px);
+      line-height: 1.25;
+      letter-spacing: 0;
+      color: var(--navy);
+    }
+
+    .section-note {
+      margin: 0;
+      color: var(--muted);
+      font-size: 13px;
+      text-align: right;
+    }
+
+    .summary-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .summary {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-left: 5px solid var(--teal);
+      border-radius: 8px;
+      padding: 18px;
+      min-height: 178px;
+    }
+
+    .summary:nth-child(2) {
+      border-left-color: var(--gold);
+    }
+
+    .summary:nth-child(3) {
+      border-left-color: var(--rose);
+    }
+
+    .summary h3,
+    .flow-step h3,
+    .connect h3 {
+      margin: 0 0 8px;
+      font-size: 18px;
+      letter-spacing: 0;
+    }
+
+    .summary p,
+    .flow-step p,
+    .connect p {
+      margin: 0;
+      color: #314050;
+    }
+
+    .before-after {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+      gap: 16px;
+    }
+
+    .state {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    .state h3 {
+      margin: 0;
+      padding: 13px 16px;
+      color: #fff;
+      background: var(--navy);
+      font-size: 18px;
+      letter-spacing: 0;
+    }
+
+    .state.after h3 {
+      background: var(--teal);
+    }
+
+    .state ul,
+    .check-list {
+      margin: 0;
+      padding: 16px 18px 18px 36px;
+    }
+
+    li {
+      margin: 6px 0;
+    }
+
+    .flow {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 12px;
+      counter-reset: step;
+    }
+
+    .flow-step {
+      position: relative;
+      min-height: 210px;
+      padding: 46px 16px 16px;
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+    }
+
+    .flow-step::before {
+      counter-increment: step;
+      content: counter(step);
+      position: absolute;
+      top: 14px;
+      left: 16px;
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      background: var(--gold);
+      color: #fff;
+      display: grid;
+      place-items: center;
+      font-size: 13px;
+      font-weight: 800;
+    }
+
+    .quote-wall {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    blockquote {
+      margin: 0;
+      background: #102d46;
+      color: #fff;
+      border-radius: 8px;
+      padding: 18px;
+      min-height: 142px;
+      display: flex;
+      align-items: center;
+      font-size: 18px;
+      font-weight: 700;
+      line-height: 1.65;
+    }
+
+    blockquote.accent {
+      background: #8a5a15;
+    }
+
+    blockquote.soft {
+      background: #235d58;
+    }
+
+    .connect-grid {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    .connect {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 16px;
+    }
+
+    .tag-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 18px;
+    }
+
+    .tag {
+      border: 1px solid rgba(7, 57, 92, 0.22);
+      background: rgba(255, 255, 255, 0.72);
+      color: var(--navy);
+      padding: 4px 9px;
+      font-size: 12px;
+      font-weight: 700;
+      border-radius: 999px;
+    }
+
+    .source {
+      background: rgba(255, 255, 255, 0.64);
+      border-top: 1px solid var(--line);
+      padding-top: 18px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    @media (max-width: 900px) {
+      .hero,
+      .summary-grid,
+      .before-after,
+      .flow,
+      .quote-wall,
+      .connect-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        min-height: 0;
+      }
+
+      .hero-copy {
+        padding-top: 12px;
+      }
+
+      .flyer-frame {
+        max-width: 520px;
+      }
+
+      .section-head {
+        display: block;
+      }
+
+      .section-note {
+        margin-top: 4px;
+        text-align: left;
+      }
+    }
+
+    @media print {
+      body {
+        background: #fff;
+      }
+
+      .page {
+        width: 100%;
+        padding: 0;
+      }
+
+      .flyer-frame,
+      .summary,
+      .state,
+      .flow-step,
+      blockquote,
+      .connect {
+        box-shadow: none;
+        break-inside: avoid;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="kicker">八戸市倫理法人会 ナイトセミナー / 2026.05.20</p>
+        <h1>夫婦は<br>真逆のほうがいい</h1>
+        <p class="lead">
+          正しさで人を動かそうとしていた経営者が、妻と社員の「違う視点」を受け入れ、
+          夫婦関係と会社の空気を変えていった講話。鍵は、勝ち負けを手放し、
+          「この人と一緒にいたい」と思われる人になること。
+        </p>
+        <div class="meta-grid">
+          <div class="meta"><span>講師</span><strong>井上 信平 氏</strong></div>
+          <div class="meta"><span>所属</span><strong>株式会社0172 代表取締役 / 青森県倫理法人会 副会長</strong></div>
+          <div class="meta"><span>会場</span><strong>八戸プラザホテル</strong></div>
+          <div class="meta"><span>主題</span><strong>考え方が真逆の人を受け入れる極意</strong></div>
+        </div>
+      </div>
+      <figure class="flyer-frame">
+        <img src="sources/2026-05-20_井上_flyer.png" alt="井上信平氏 ナイトセミナーのチラシ">
+      </figure>
+    </section>
+
+    <section class="section" aria-labelledby="map">
+      <div class="section-head">
+        <h2 id="map">講話の地図</h2>
+        <p class="section-note">先にここだけ読めば全体像が掴める</p>
+      </div>
+      <div class="summary-grid">
+        <article class="summary">
+          <h3>問題</h3>
+          <p>「正しいことを言えば人は動く」と考え、夫婦にも社員にも自分の基準を求めていた。結果として、辞表や辞退者が続き、人間不信に近い状態まで追い込まれた。</p>
+        </article>
+        <article class="summary">
+          <h3>転機</h3>
+          <p>妻・順子氏の見方や行動に触れ、自分と違う人は不快な存在ではなく、自分にない視点を持つ安心材料だと受け止め直した。</p>
+        </article>
+        <article class="summary">
+          <h3>結論</h3>
+          <p>夫婦も会社も、相手を自分の色に染める場所ではない。違いを活かし、感謝を伝え、「一緒にいたい」と思われる人になることが経営を変える。</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="shift">
+      <div class="section-head">
+        <h2 id="shift">変化の前後</h2>
+        <p class="section-note">正しさの押し付けから、違いを活かす関係へ</p>
+      </div>
+      <div class="before-after">
+        <article class="state">
+          <h3>Before</h3>
+          <ul>
+            <li>「こうあるべき」の基準で人を見ていた</li>
+            <li>意見が違うと「何やってんだよ」と反応していた</li>
+            <li>妻を自分の色に染めようとしていた</li>
+            <li>社員に給料を払っているのは自分だと思っていた</li>
+            <li>自分の合格基準で、付き合う人を決めていた</li>
+          </ul>
+        </article>
+        <article class="state after">
+          <h3>After</h3>
+          <ul>
+            <li>違う考え方で見てくれているから安心だと思える</li>
+            <li>意見が違うと「なるほど」と受け止める</li>
+            <li>夫婦は補い合う二人で完成系だと捉える</li>
+            <li>会社をファンクラブとして捉え直す</li>
+            <li>人生はファン作りだと定義する</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="flow">
+      <div class="section-head">
+        <h2 id="flow">講話の流れ</h2>
+        <p class="section-note">起点から経営への波及まで</p>
+      </div>
+      <div class="flow">
+        <article class="flow-step">
+          <h3>正しさの限界</h3>
+          <p>倫理を学んでいても、実際には「井上倫理」になっていた。正しいことを押し付けるほど、周囲は苦しくなる。</p>
+        </article>
+        <article class="flow-step">
+          <h3>妻との違い</h3>
+          <p>計画通りにいかないと心配する自分と、買い直せばいいと受け止める妻。その差が、自分のこだわりを映した。</p>
+        </article>
+        <article class="flow-step">
+          <h3>客観視の回復</h3>
+          <p>自分は自分を直接見られない。妻や社員は実物を見ている。だから、周囲の声を聞く意味がある。</p>
+        </article>
+        <article class="flow-step">
+          <h3>ファン作りへ</h3>
+          <p>感謝を言葉と態度で伝え、関わる距離を縮める。職場を家族に薦める人が増え、会社の空気が変わった。</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="quotes">
+      <div class="section-head">
+        <h2 id="quotes">残る言葉</h2>
+        <p class="section-note">提供メモをもとに最小限整形</p>
+      </div>
+      <div class="quote-wall">
+        <blockquote>正しさが全てだと思っていた</blockquote>
+        <blockquote class="accent">夫婦は補い合うようにできている。二人で完成系</blockquote>
+        <blockquote class="soft">今は、違う考え方で見てくれてるから安心</blockquote>
+        <blockquote class="soft">妻や社員さんは実物を見てる。だから言うこと聞く</blockquote>
+        <blockquote>自分の役割は、倫理の正しさを解く事じゃない</blockquote>
+        <blockquote class="accent">人生はファン作り</blockquote>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="connection">
+      <div class="section-head">
+        <h2 id="connection">経営への接続</h2>
+        <p class="section-note">AG-Works / CLS 文脈への翻訳</p>
+      </div>
+      <div class="connect-grid">
+        <article class="connect">
+          <h3>伝え方</h3>
+          <p>正論をそのまま出さず、相手の不安・現場感・納得の順序に合わせて変換する。</p>
+        </article>
+        <article class="connect">
+          <h3>設計</h3>
+          <p>真逆の感覚を仕様の抜けを見つける検知器として扱う。</p>
+        </article>
+        <article class="connect">
+          <h3>文化</h3>
+          <p>ありがとうを日報、レビュー、連絡の中で反復する。文化は言葉の反復でできる。</p>
+        </article>
+        <article class="connect">
+          <h3>会長職</h3>
+          <p>人を動かす前に、こちらから関わりたいと思い続けることを仕事にする。</p>
+        </article>
+        <article class="connect">
+          <h3>顧客体験</h3>
+          <p>問い合わせから納品後まで、「この会社と一緒にいたい」と思われる接点を設計する。</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="shiori">
+      <div class="section-head">
+        <h2 id="shiori">栞との関連</h2>
+        <p class="section-note">明示引用ではなく関連の可能性</p>
+      </div>
+      <ul class="check-list">
+        <li><strong>夫婦は一対の反射鏡</strong>: 相手の違いを、自分を映す視点として受け止め直す主題と重なる。</li>
+        <li><strong>第8条「明朗は健康の父、愛和は幸福の母」</strong>: 感謝や親しみを言葉と態度で表し、職場の空気を変える実践に接続する。</li>
+        <li><strong>得るは捨つるにあり</strong>: 「こうあるべき」「勝ち負け」「自分の合格基準」を手放したことで、関係性が好転した。</li>
+      </ul>
+      <div class="tag-row" aria-label="tags">
+        <span class="tag">seminar</span>
+        <span class="tag">rinri</span>
+        <span class="tag">night-seminar</span>
+        <span class="tag">couple</span>
+        <span class="tag">leadership</span>
+        <span class="tag">gratitude</span>
+      </div>
+    </section>
+
+    <section class="section source" aria-label="source">
+      <p>
+        Source: AG-Works seminar distillation note / confidence: medium
+      </p>
+    </section>
+  </main>
+</body>
+</html>
